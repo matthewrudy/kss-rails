@@ -10,7 +10,9 @@ module Kss
       end
 
       content = capture(&block)
-      render 'kss/shared/styleguide_block', :section => @section, :example_html => content
+      modifiers = @section.modifiers
+
+      render 'kss/shared/styleguide_block', section: @section, example_html: content, modifiers: modifiers
     end
 
     def render_styleguide_section(section_name)
@@ -20,6 +22,14 @@ module Kss
 
     def styleguide_sections
       styleguide.sections.keys.sort
+    end
+
+    def process_example_html(example_html, modifier)
+      example_html.
+        gsub('$modifier_class', modifier.class_name).
+        gsub('$modifier_name', modifier.name).
+        gsub('$modifier_description', modifier.description).
+        strip
     end
   end
 end
