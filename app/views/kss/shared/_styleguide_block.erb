@@ -10,15 +10,14 @@
       </ul>
     <% end %>
   </div>
+  <pre><code data-language="html"><%= example_html.strip %></code></pre>
   <div class="styleguide-element">
     <%= example_html.html_safe %>
   </div>
-  <pre><code data-language="html"><%= example_html.strip %></code></pre>
   <% section.modifiers.each do |modifier| %>
     <div class="styleguide-element styleguide-modifier">
       <span class="styleguide-modifier-name"><%= modifier.name %></span>
       <%= process_example_html(example_html, modifier).html_safe %>
     </div>
-    <pre><code data-language="html"><%= process_example_html(example_html, modifier) %></code></pre>
   <% end %>
 </div>
