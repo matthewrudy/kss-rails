@@ -27,8 +27,11 @@
       <%= yield %>
 
     </div>
+
     <%= javascript_include_tag 'kss' %>
     <%= javascript_include_tag 'rainbow' %>
     <%= javascript_include_tag 'jquery' %>
+
+    <%= yield :javascript %>
   </body>
 </html>
