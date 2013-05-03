@@ -12,7 +12,8 @@ Gem::Specification.new do |gem|
   gem.name          = 'kss-rails'
   gem.require_paths = ['lib']
   gem.version       = '1.0.2'
-  
+
   gem.add_dependency 'kss'
+  gem.add_dependency 'jquery-rails', '= 1.0.19'
   gem.add_dependency 'rails', '>= 3.0.0'
 end
